@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #7f4b1f;
+    --color-secondary: #fefbe8;
+    --color-white: #f2f4f7;
+
+    --banner-height: 36px;
+    --navbar-height: 92.2px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  small,
+  strong,
+  body,
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  #app {
+    height: 1px;
+    min-height: 100dvh;
+  }
+}
+
+@layer components {
+  .layout-base {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .layout-content-grow {
+      flex-grow: 1;
+    }
+  }
+
+  .section-base {
+    min-height: 100dvh;
+  }
+}
+
+@layer utilities {
+  .grid-item-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
