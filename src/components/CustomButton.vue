@@ -10,9 +10,12 @@ import Button from 'primevue/button';
 .p-button {
   background-color: #502414;
   border: 1px solid #502414;
-  border-radius: 100px;
+  //   border-radius: 100px;
   padding-left: 1.8rem;
   padding-right: 1.8rem;
+}
+.p-button-rounded {
+  border-radius: 100px;
 }
 .p-button-text {
   background-color: transparent;

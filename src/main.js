@@ -5,8 +5,10 @@ import { createPinia } from 'pinia';
 import PrimeVue from 'primevue/config';
 import AnimateOnScroll from 'primevue/animateonscroll';
 
-import '@/styles/global.css';
+//3rd party component styling
 import 'primeicons/primeicons.css';
+
+import '@/styles/global.css';
 import '@/styles/primevue-sass-theme/themes/mytheme/theme.scss';
 
 /* custom components */
@@ -19,6 +21,8 @@ import CustomIconWrapper from '@/components/CustomIconWrapper.vue';
 import CustomProductTab from '@/components/CustomProductTab.vue';
 import CustomPackageCard from '@/components/CustomPackageCard.vue';
 import CustomMemberItem from '@/components/CustomMemberItem.vue';
+import CustomAvatar from '@/components/CustomAvatar.vue';
+import CustomInputText from '@/components/CustomInputText.vue';
 
 const pinia = createPinia();
 const app = createApp(App);
@@ -39,5 +43,7 @@ app.component('CustomIconWrapper', CustomIconWrapper);
 app.component('CustomProductTab', CustomProductTab);
 app.component('CustomPackageCard', CustomPackageCard);
 app.component('CustomMemberItem', CustomMemberItem);
+app.component('CustomAvatar', CustomAvatar);
+app.component('CustomInputText', CustomInputText);
 
 app.mount('#app');

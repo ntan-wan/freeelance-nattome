@@ -10,6 +10,8 @@
 
     --banner-height: 36px;
     --navbar-height: 92.2px;
+
+    --yellow-custom: #fefbe8;
   }
 
   * {
@@ -25,6 +27,7 @@
   small,
   strong,
   body,
+  ul,li,ol,
   p {
     margin: 0;
     padding: 0;
@@ -38,6 +41,22 @@
     height: 1px;
     min-height: 100dvh;
   }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #cccccc; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b3b3b3; 
+}
 }
 
 @layer components {
@@ -63,4 +82,5 @@
     align-items: center;
     justify-content: center;
   }
+
 }

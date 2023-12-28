@@ -22,6 +22,8 @@ import mestiLogo from '@/assets/imgs/MestiLogo.png';
 import mhlLogo from '@/assets/imgs/MHLogo.png';
 import nhLogo from '@/assets/imgs/NHLogo.png';
 import gastroADImg from '@/assets/imgs/gastroADImg.png';
+
+import CustomCarouselTestimonials from '@/components/CustomCarouselTestimonials.vue';
 </script>
 
 <template>
@@ -37,7 +39,7 @@ import gastroADImg from '@/assets/imgs/gastroADImg.png';
             <br />
             of quality, safety and experience from our products.
           </p>
-          <CustomButton label="Buy Now" class="mt-16 text-2xl" />
+          <CustomButton label="Buy Now" rounded class="mt-16 text-2xl" />
         </div>
       </div>
     </section>
@@ -173,67 +175,72 @@ import gastroADImg from '@/assets/imgs/gastroADImg.png';
       </CustomContainer>
     </section>
 
-    <section class="section-base section-member-vip">
-      <CustomContainer>
-        <h3 class="title text-center">Join the Nattome VIP Member</h3>
-        <div class="mt-20 flex justify-between items-center gap-12">
-          <CustomMemberItem>
-            <template #icon>
-              <PresentIcon />
-            </template>
-            <template #text> Birthday Discount / Gifts </template>
-          </CustomMemberItem>
-          <CustomMemberItem>
-            <template #icon>
-              <AnnualBuyIcon />
-            </template>
-            <template #text> Annually Buy 6 Free 2 </template>
-          </CustomMemberItem>
-          <CustomMemberItem>
-            <template #icon>
-              <MsgIcon />
-            </template>
-            <template #text> Dietitian 1-on-1 Follow Up </template>
-          </CustomMemberItem>
-          <CustomMemberItem>
-            <template #icon>
-              <WhatsappIcon />
-            </template>
-            <template #text> WhatsApp Community </template>
-          </CustomMemberItem>
-          <CustomMemberItem>
-            <template #icon>
-              <PresentOpenIcon />
-            </template>
-            <template #text> Random Giveaway </template>
-          </CustomMemberItem>
-        </div>
+    <div class="bg-yellow-custom pt-10 pb-9">
+      <section class="section-base section-member-vip">
+        <CustomContainer>
+          <h3 class="title text-center">Testimonials</h3>
+          <CustomCarouselTestimonials class="mt-6"></CustomCarouselTestimonials>
 
-        <div class="mt-20 text-center">
-          <CustomButton class="text-xl" label="How To Become VIP" />
-        </div>
-      </CustomContainer>
-    </section>
-
-    <section class="section-base section-ingredients">
-      <CustomContainer>
-        <div class="grid grid-cols-12">
-          <div class="col-span-5">
-            <h3 class="title">Our Main Ingredient</h3>
-            <strong class="block mt-24 ingredient-name">Gastro-AD</strong>
-            <sub class="ingredient-subtitle block">(Fermented Soy)</sub>
-            <p class="mt-9 infredient-description">
-              Top Patented Ingredients in Nattome’s Product
-            </p>
+          <h3 class="title text-center mt-28">Join the Nattome VIP Member</h3>
+          <div class="mt-20 flex justify-between items-center gap-12">
+            <CustomMemberItem>
+              <template #icon>
+                <PresentIcon />
+              </template>
+              <template #text> Birthday Discount / Gifts </template>
+            </CustomMemberItem>
+            <CustomMemberItem>
+              <template #icon>
+                <AnnualBuyIcon />
+              </template>
+              <template #text> Annually Buy 6 Free 2 </template>
+            </CustomMemberItem>
+            <CustomMemberItem>
+              <template #icon>
+                <MsgIcon />
+              </template>
+              <template #text> Dietitian 1-on-1 Follow Up </template>
+            </CustomMemberItem>
+            <CustomMemberItem>
+              <template #icon>
+                <WhatsappIcon />
+              </template>
+              <template #text> WhatsApp Community </template>
+            </CustomMemberItem>
+            <CustomMemberItem>
+              <template #icon>
+                <PresentOpenIcon />
+              </template>
+              <template #text> Random Giveaway </template>
+            </CustomMemberItem>
           </div>
-          <div class="col-span-7">
-            <img :src="gastroADImg" />
-          </div>
-        </div>
-      </CustomContainer>
-    </section>
 
-    <section class="section-base section-certification">
+          <div class="mt-20 text-center">
+            <CustomButton rounded class="text-xl" label="How To Become VIP" />
+          </div>
+        </CustomContainer>
+      </section>
+
+      <section class="mt-14 section-ingredients">
+        <CustomContainer>
+          <div class="grid grid-cols-12">
+            <div class="col-span-5">
+              <h3 class="title">Our Main Ingredient</h3>
+              <strong class="block mt-24 ingredient-name">Gastro-AD</strong>
+              <sub class="ingredient-subtitle block">(Fermented Soy)</sub>
+              <p class="mt-9 infredient-description">
+                Top Patented Ingredients in Nattome’s Product
+              </p>
+            </div>
+            <div class="col-span-7">
+              <img :src="gastroADImg" />
+            </div>
+          </div>
+        </CustomContainer>
+      </section>
+    </div>
+
+    <section class="mt-10 pb-24 section-certification">
       <CustomContainer>
         <h3 class="title text-center">Our Certifications & Awards</h3>
         <div class="grid grid-cols-7 mt-12">

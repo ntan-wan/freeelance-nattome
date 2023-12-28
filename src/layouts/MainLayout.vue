@@ -1,3 +1,7 @@
+<script setup>
+import CustomFooter from '@/components/CustomFooter.vue';
+</script>
+
 <template>
   <div class="layout-base">
     <CustomBanner></CustomBanner>
@@ -5,6 +9,6 @@
     <main class="layout-content-grow">
       <slot />
     </main>
-    <footer>footer</footer>
+    <CustomFooter></CustomFooter>
   </div>
 </template>
