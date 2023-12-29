@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue';
 import NaturalIngredientIcon from '@/components/icons/NaturalIngredientIcon.vue';
 import CoffeeIcon from '@/components/icons/CoffeeIcon.vue';
 import NonMedicineIcon from '@/components/icons/NonMedicineIcon.vue';
@@ -24,14 +25,47 @@ import nhLogo from '@/assets/imgs/NHLogo.png';
 import gastroADImg from '@/assets/imgs/gastroADImg.png';
 
 import CustomCarouselTestimonials from '@/components/CustomCarouselTestimonials.vue';
+import CustomCarouselProducts from '@/components/CustomCarouselProducts.vue';
+import CustomProductInfo from '@/components/CustomProductInfo.vue';
+
+/* states */
+const dummyProducts = [
+  {
+    id: 1,
+    name: 'Stomach Food Oath',
+    img: product,
+    description:
+      ' Isolated Soy Protein, Oat Milk Powder, Whole Oat Flour Powder, Maltodextrin, Fiberligo ( Resistant Dextrin ), Gastro-AD ( Fermeted Soy), DigeSEB ProTM (Lactase, Proteases, Cellulase, Lipase, Amylase, Pectinase, Papain, Bromelain ), ProbiocapTM B.longum Roselle-175',
+  },
+  {
+    id: 2,
+    name: 'R&R Fast Relief Powder',
+    img: product2,
+    description:
+      'eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim  aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  },
+];
+const selectedProductId = ref(1);
+
+/* util functions */
+function getProduct(products, productId) {
+  return products.find((product) => product.id === productId);
+}
+
+/* event handlers */
+function handleProduct(product) {
+  selectedProductId.value = product.id;
+}
 </script>
 
 <template>
   <div class="landing-page">
     <section class="section-base section-hero flex">
       <div class="flex items-center w-1/2">
-        <div class="pl-20">
-          <!-- v-animateonscroll="{ enterClass: 'fadein', leaveClass: 'fadeout' }" -->
+        <div
+          class="pl-20"
+          v-animateonscroll="{ enterClass: 'onScroll-fadeInLeft' }"
+        >
           <h1 class="hero-title">Plant-Based</h1>
           <p class="hero-description">Health Products for Gut Care</p>
           <p class="hero-description-small mt-10">
@@ -126,10 +160,16 @@ import CustomCarouselTestimonials from '@/components/CustomCarouselTestimonials.
     <section class="section-base section-third">
       <CustomContainer>
         <div class="flex">
-          <div class="grow shrink-0">
+          <div
+            v-animateonscroll="{ enterClass: 'onScroll-fadeInLeft' }"
+            class="grow shrink-0"
+          >
             <img :src="heroImg2" />
           </div>
-          <div class="grow flex flex-col items-center justify-center">
+          <div
+            v-animateonscroll="{ enterClass: 'onScroll-fadeInRight' }"
+            class="grow flex flex-col items-center justify-center"
+          >
             <div class="w-3/4">
               <h3 class="title">Nattome Stomach Food</h3>
               <p class="text mt-4">
@@ -146,20 +186,23 @@ import CustomCarouselTestimonials from '@/components/CustomCarouselTestimonials.
 
     <section class="section-base section-four">
       <CustomContainer>
-        <div class="grid grid-cols-12">
+        <div class="grid grid-cols-12 gap-6">
           <div class="col-span-5">
             <h3 class="title mb-8">Our Products</h3>
             <CustomProductTab
+              v-for="(product, i) in dummyProducts"
+              @productClicked="handleProduct"
+              :key="i"
               class="mb-4"
-              pName="Stomach Food Oath"
-              :pImg="product"
-            ></CustomProductTab>
-            <CustomProductTab
-              pName="R&R Fast Relief Powder"
-              :pImg="product2"
+              :pData="product"
             ></CustomProductTab>
           </div>
-          <div class="col-span-7">two</div>
+          <div class="col-span-7">
+            <CustomProductInfo
+              v-animateonscroll="{ enterClass: 'onScroll-fadeInRight' }"
+              :pProduct="getProduct(dummyProducts, selectedProductId)"
+            />
+          </div>
         </div>
       </CustomContainer>
     </section>
@@ -170,7 +213,9 @@ import CustomCarouselTestimonials from '@/components/CustomCarouselTestimonials.
           <div class="col-span-4">
             <CustomPackageCard></CustomPackageCard>
           </div>
-          <div class="col-span-8"></div>
+          <div class="col-span-8">
+            <CustomCarouselProducts />
+          </div>
         </div>
       </CustomContainer>
     </section>

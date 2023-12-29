@@ -3,22 +3,21 @@ import product from '@/assets/imgs/productImg-1.png';
 import Button from 'primevue/button';
 
 const props = defineProps({
-  pName: { type: String, default: '' },
-  pImg: { type: String, default: '' },
+  pData: { type: Object, default: {} },
 });
 const emits = defineEmits(['productClicked']);
 
 /* event handlers */
 function handleProduct() {
-  emits('productClicked');
+  emits('productClicked', props.pData);
 }
 </script>
 
 <template>
   <Button @click="handleProduct">
-    <h3 class="product-title">{{ props.pName }}</h3>
+    <h3 class="product-title">{{ props.pData.name }}</h3>
     <div>
-      <img class="product-img" :src="props.pImg" />
+      <img class="product-img" :src="props.pData.img" />
     </div>
   </Button>
 </template>

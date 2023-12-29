@@ -24,6 +24,8 @@ import CustomMemberItem from '@/components/CustomMemberItem.vue';
 import CustomAvatar from '@/components/CustomAvatar.vue';
 import CustomInputText from '@/components/CustomInputText.vue';
 
+import FadeAnim from '@/components/animations/FadeAnim.vue';
+
 const pinia = createPinia();
 const app = createApp(App);
 
@@ -45,5 +47,8 @@ app.component('CustomPackageCard', CustomPackageCard);
 app.component('CustomMemberItem', CustomMemberItem);
 app.component('CustomAvatar', CustomAvatar);
 app.component('CustomInputText', CustomInputText);
+
+/* animations */
+app.component('FadeAnim', FadeAnim);
 
 app.mount('#app');

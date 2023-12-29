@@ -1,9 +1,14 @@
 <script setup>
 import Button from 'primevue/button';
+
+const props = defineProps({
+  pt: { type: Object, default: {} },
+  size: { type: String, default: '' },
+});
 </script>
 
 <template>
-  <Button><slot></slot></Button>
+  <Button :pt="props.pt" :size="props.size"><slot></slot></Button>
 </template>
 
 <style scoped lang="scss">
