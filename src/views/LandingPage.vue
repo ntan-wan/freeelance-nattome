@@ -197,8 +197,9 @@ function handleProduct(product) {
 
     <section class="section-base section-four">
       <CustomContainer>
-        <div class="grid grid-cols-12 gap-6">
-          <div class="col-span-5">
+        <div class="flex flex-wrap">
+          <!-- <div class="col-span-full md:col-span-5"> -->
+          <div class="basis-full lg:basis-5/12 order-2 lg:order-1">
             <h3 class="title mb-8">Our Products</h3>
             <CustomProductTab
               v-for="(product, i) in dummyProducts"
@@ -208,7 +209,7 @@ function handleProduct(product) {
               :pData="product"
             ></CustomProductTab>
           </div>
-          <div class="col-span-7">
+          <div class="basis full lg:basis-7/12 order-1 lg:order-2">
             <CustomProductInfo
               v-animateonscroll="{ enterClass: 'onScroll-fadeInRight' }"
               :pProduct="getProduct(dummyProducts, selectedProductId)"
@@ -220,11 +221,11 @@ function handleProduct(product) {
 
     <section class="section-base section-package">
       <CustomContainer>
-        <div class="grid grid-cols-12">
-          <div class="col-span-4">
+        <div class="flex flex-wrap">
+          <div class="basis-full lg:basis-4/12 hidden lg:block">
             <CustomPackageCard></CustomPackageCard>
           </div>
-          <div class="col-span-8">
+          <div class="basis-full lg:basis-8/12">
             <CustomCarouselProducts />
           </div>
         </div>
@@ -238,32 +239,34 @@ function handleProduct(product) {
           <CustomCarouselTestimonials class="mt-6"></CustomCarouselTestimonials>
 
           <h3 class="title text-center mt-28">Join the Nattome VIP Member</h3>
-          <div class="mt-20 flex justify-between items-center gap-12">
-            <CustomMemberItem>
+          <div
+            class="mt-20 flex flex-wrap lg:flex-nowrap lg:justify-between lg:gap-4"
+          >
+            <CustomMemberItem class="basis-6/12">
               <template #icon>
                 <PresentIcon />
               </template>
               <template #text> Birthday Discount / Gifts </template>
             </CustomMemberItem>
-            <CustomMemberItem>
+            <CustomMemberItem class="basis-6/12">
               <template #icon>
                 <AnnualBuyIcon />
               </template>
               <template #text> Annually Buy 6 Free 2 </template>
             </CustomMemberItem>
-            <CustomMemberItem>
+            <CustomMemberItem class="basis-6/12">
               <template #icon>
                 <MsgIcon />
               </template>
               <template #text> Dietitian 1-on-1 Follow Up </template>
             </CustomMemberItem>
-            <CustomMemberItem>
+            <CustomMemberItem class="basis-6/12">
               <template #icon>
                 <WhatsappIcon />
               </template>
               <template #text> WhatsApp Community </template>
             </CustomMemberItem>
-            <CustomMemberItem>
+            <CustomMemberItem class="basis-6/12">
               <template #icon>
                 <PresentOpenIcon />
               </template>
@@ -279,23 +282,26 @@ function handleProduct(product) {
 
       <section class="mt-14 section-ingredients">
         <CustomContainer>
-          <div class="grid grid-cols-12">
+          <div class="flex flex-wrap">
             <div
-              class="col-span-5"
+              class="basis-full md:basis-4/12"
               v-animateonscroll="{ enterClass: 'onScroll-fadeInLeft' }"
             >
               <h3 class="title">Our Main Ingredient</h3>
-              <strong class="block mt-24 ingredient-name">Gastro-AD</strong>
+              <strong
+                class="block mt-24 ingredient-name !text-5xl md:!text-[5rem]"
+                >Gastro-AD</strong
+              >
               <sub class="ingredient-subtitle block">(Fermented Soy)</sub>
               <p class="mt-9 infredient-description">
                 Top Patented Ingredients in Nattome’s Product
               </p>
             </div>
             <div
-              class="col-span-7"
+              class="basis-full md:basis-8/12"
               v-animateonscroll="{ enterClass: 'onScroll-fadeInRight' }"
             >
-              <img :src="gastroADImg" />
+              <img :src="gastroADImg" class="w-full max-w-full" />
             </div>
           </div>
         </CustomContainer>

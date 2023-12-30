@@ -1,7 +1,7 @@
 <template>
   <footer class="footer-base">
-    <div class="flex justify-between border-bottom">
-      <section>
+    <div class="flex flex-wrap">
+      <section class="basis-full sm:basis-4/12">
         <p class="mb-3">
           <b class="title">NATTŌME</b>
         </p>
@@ -13,7 +13,7 @@
         </ul>
       </section>
 
-      <section>
+      <section class="basis-full sm:basis-4/12">
         <p class="mb-3">
           <b class="title">CUSTOMER</b>
         </p>
@@ -25,7 +25,7 @@
         </ul>
       </section>
 
-      <section>
+      <section class="basis-full sm:basis-4/12">
         <p class="mb-3">
           <b class="title">STAY CONNECTED</b>
         </p>
@@ -47,10 +47,7 @@
           class="bg-transparent border-[#3b3b3b]"
         />
         <CustomButton
-          :pt="{
-            root: { style: { backgroundColor: '#3b3b3b', border: '#3b3b3b' } },
-          }"
-          class="ml-2"
+          class="ml-2 !bg-[#3b3b3b] !border-[#3b3b3b]"
           label="Submit"
         />
       </section>
@@ -63,10 +60,10 @@
 
 <style scoped lang="scss">
 .footer-base {
-  padding: 1rem;
-  padding-top: 37px;
-  padding-left: 5rem;
-  padding-right: 5rem;
+  // padding: 1rem;
+  // padding-top: 37px;
+  // padding-left: 5rem;
+  // padding-right: 5rem;
   background-color: #232323;
 
   .title {

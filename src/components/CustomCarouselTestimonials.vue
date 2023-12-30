@@ -31,10 +31,23 @@ const testimonials = ref([
     img: dummyAvatar,
   },
 ]);
+
+const breakpoints = {
+  // 700px and up
+  700: {
+    itemsToShow: 2.5,
+    snapAlign: 'center',
+  },
+  // 1024 and up
+  1024: {
+    itemsToShow: 2.5,
+    snapAlign: 'center',
+  },
+};
 </script>
 
 <template>
-  <Carousel :itemsToShow="3" :wrapAround="true" :transition="500">
+  <Carousel :wrapAround="true" :transition="500" :breakpoints="breakpoints">
     <Slide v-for="(testimony, i) in testimonials" :key="i">
       <div class="carousel__item">
         <Rating

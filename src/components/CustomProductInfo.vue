@@ -6,8 +6,8 @@ const props = defineProps({
 
 <template>
   <div class="product">
-    <div class="grid grid-cols-7 gap-x-16">
-      <div class="col-span-3">
+    <div class="flex flex-wrap">
+      <div class="basis-full lg:basis-5/12">
         <FadeAnim>
           <img
             :src="props.pProduct.img"
@@ -17,7 +17,7 @@ const props = defineProps({
           />
         </FadeAnim>
       </div>
-      <div class="col-span-4 flex flex-col">
+      <div class="basis-full lg:basis-7/12 flex flex-col">
         <h6 class="product-title">Ingredients</h6>
         <FadeAnim>
           <p class="product-description" :key="props.pProduct.id">
@@ -28,37 +28,37 @@ const props = defineProps({
       </div>
     </div>
     <FadeAnim>
-      <div class="mt-7 flex justify-between gap-4" :key="props.pProduct.id">
-        <div class="">
+      <div class="mt-7 flex flex-wrap lg:flex-nowrap" :key="props.pProduct.id">
+        <div class="basis-6/12">
           <p class="nutrient-value">66</p>
           <p class="nutrient-type">Calories</p>
         </div>
-        <div class="">
+        <div class="basis-6/12">
           <p class="nutrient-value">8.7g</p>
           <p class="nutrient-type">Carbs</p>
         </div>
-        <div class="">
+        <div class="basis-6/12">
           <p class="nutrient-value">1.1g</p>
           <p class="nutrient-type">Fats</p>
         </div>
-        <div class="">
+        <div class="basis-6/12">
           <p class="nutrient-value">5.8g</p>
           <p class="nutrient-type">Protein</p>
         </div>
-        <div class="">
+        <div class="basis-6/12">
           <p class="nutrient-value">1.7g</p>
           <p class="nutrient-type">
             Dietary<br />
             Fibre
           </p>
         </div>
-        <div class="">
+        <div class="basis-6/12">
           <p class="nutrient-value">0.8g</p>
           <p class="nutrient-type">Sugar</p>
         </div>
-        <div class="">
+        <div class="basis-6/12">
           <p class="nutrient-value">0.6mg</p>
-          <p class="nutrient-type">Sodium</p>
+          <p class="nutrient-type text-left">Sodium</p>
         </div>
       </div>
     </FadeAnim>
@@ -97,7 +97,6 @@ const props = defineProps({
 
   .nutrient-type {
     color: #667085;
-    text-align: center;
     font-size: 1rem;
     font-style: normal;
     font-weight: 400;
