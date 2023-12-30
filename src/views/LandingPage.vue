@@ -80,40 +80,42 @@ function handleProduct(product) {
 
     <section class="section-base section-second">
       <CustomContainer>
-        <div class="flex gap-4 justify-between items-center">
+        <div
+          class="flex flex-col lg:flex-row gap-4 justify-between items-center"
+        >
           <div class="grow shrink-0">
             <h2 class="title">Light Breakfast for Gut Health</h2>
             <small class="subtitle"
               >Why don't you try Nattome Stomach food?</small
             >
           </div>
-          <p class="description grow text-right">
+          <p class="description grow text-center lg:text-right">
             Nattome endeavors to bring the best for our customers in terms of
             <br />
             quality, safety and experience from our products.
           </p>
         </div>
 
-        <div class="mt-16 flex justify-between">
-          <div>
+        <div class="mt-16 flex flex-wrap justify-between">
+          <div class="basis-1/2 md:basis-3/12">
             <CustomIconWrapper>
               <NaturalIngredientIcon />
             </CustomIconWrapper>
             <h4 class="icon-title mt-4">Natural Ingredients</h4>
           </div>
-          <div>
+          <div class="basis-1/2 md:basis-3/12">
             <CustomIconWrapper>
               <CoffeeIcon />
             </CustomIconWrapper>
             <h4 class="icon-title mt-4">Tasty & Smooth</h4>
           </div>
-          <div>
+          <div class="basis-1/2 md:basis-3/12">
             <CustomIconWrapper>
               <WheatIcon />
             </CustomIconWrapper>
             <h4 class="icon-title mt-4">Variety of Flavour</h4>
           </div>
-          <div>
+          <div class="basis-1/2 md:basis-3/12">
             <CustomIconWrapper>
               <NonMedicineIcon />
             </CustomIconWrapper>
@@ -122,14 +124,21 @@ function handleProduct(product) {
         </div>
 
         <h2 class="our-solution-title mt-20 text-center">Our Solutions</h2>
-        <div class="mt-9 flex justify-between">
-          <CustomCardSolution pIsActive pHeader="Optimize Gastric PH Value">
+        <div class="mt-9 flex flex-wrap justify-between">
+          <CustomCardSolution
+            pIsActive
+            pHeader="Optimize Gastric PH Value"
+            class="basis-1/2 lg:basis-3/12"
+          >
             <template #content>
               Nattome contains Gastro-AD which lowers gastric level to
               1.9-4.7.Reduce gastric pain and heartburn.
             </template>
           </CustomCardSolution>
-          <CustomCardSolution pHeader="Reduce Gastric & Protease Production">
+          <CustomCardSolution
+            pHeader="Reduce Gastric & Protease Production"
+            class="basis-1/2 lg:basis-3/12"
+          >
             <template #content>
               Lactobacillus digests protein and release peptide to reduce the
               activation of interleukin which directly reduces damage towards
@@ -137,6 +146,7 @@ function handleProduct(product) {
             </template>
           </CustomCardSolution>
           <CustomCardSolution
+            class="basis-1/2 lg:basis-3/12"
             pHeader="Strengthen Gastric Repair & Immune System"
           >
             <template #content>
@@ -145,6 +155,7 @@ function handleProduct(product) {
             </template>
           </CustomCardSolution>
           <CustomCardSolution
+            class="basis-1/2 lg:basis-3/12"
             pHeader="Effective and Best for Gastric Maintenance"
           >
             <template #content>
@@ -159,18 +170,18 @@ function handleProduct(product) {
 
     <section class="section-base section-third">
       <CustomContainer>
-        <div class="flex">
+        <div class="flex flex-wrap">
           <div
             v-animateonscroll="{ enterClass: 'onScroll-fadeInLeft' }"
-            class="grow shrink-0"
+            class="basis-full md:basis-1/2 p-4"
           >
-            <img :src="heroImg2" />
+            <img :src="heroImg2" class="w-full" />
           </div>
           <div
             v-animateonscroll="{ enterClass: 'onScroll-fadeInRight' }"
-            class="grow flex flex-col items-center justify-center"
+            class="basis-full md:basis-1/2 p-4 flex flex-col items-center justify-center"
           >
-            <div class="w-3/4">
+            <div>
               <h3 class="title">Nattome Stomach Food</h3>
               <p class="text mt-4">
                 is a specially formulated cultured soybean meal with oats
@@ -269,7 +280,10 @@ function handleProduct(product) {
       <section class="mt-14 section-ingredients">
         <CustomContainer>
           <div class="grid grid-cols-12">
-            <div class="col-span-5">
+            <div
+              class="col-span-5"
+              v-animateonscroll="{ enterClass: 'onScroll-fadeInLeft' }"
+            >
               <h3 class="title">Our Main Ingredient</h3>
               <strong class="block mt-24 ingredient-name">Gastro-AD</strong>
               <sub class="ingredient-subtitle block">(Fermented Soy)</sub>
@@ -277,7 +291,10 @@ function handleProduct(product) {
                 Top Patented Ingredients in Nattome’s Product
               </p>
             </div>
-            <div class="col-span-7">
+            <div
+              class="col-span-7"
+              v-animateonscroll="{ enterClass: 'onScroll-fadeInRight' }"
+            >
               <img :src="gastroADImg" />
             </div>
           </div>

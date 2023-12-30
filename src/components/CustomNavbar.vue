@@ -34,13 +34,13 @@ const items = ref([
     <template #start> <img :src="logoImg" /> </template>
     <template #end>
       <div class="menubar-end-wrapper">
-        <CustomButton text style="padding: 0">
+        <CustomButton text icon="pi">
           <SearchIcon />
         </CustomButton>
-        <CustomButton text style="padding: 0">
+        <CustomButton text icon="pi">
           <ShoppingCartIcon />
         </CustomButton>
-        <CustomButton text style="padding: 0">
+        <CustomButton text icon="pi">
           <UserIcon />
         </CustomButton>
       </div>
@@ -53,7 +53,7 @@ const items = ref([
   background-color: transparent;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  // justify-content: space-between;
   position: fixed;
   width: 100%;
   // top: var(--banner-height);
@@ -63,8 +63,21 @@ const items = ref([
   z-index: 10;
 }
 
+:deep(.p-menubar-button) {
+  margin-left: 0.5rem;
+}
+
+:deep(.p-menubar-root-list) {
+  @media screen and (min-width: 768px) {
+    margin: 0 auto;
+  }
+}
+
 :deep(.p-menubar-end) {
-  margin: 0;
+  margin-left: auto;
+  @media screen and (min-width: 1024px) {
+    margin: 0;
+  }
 }
 
 .menubar-end-wrapper {

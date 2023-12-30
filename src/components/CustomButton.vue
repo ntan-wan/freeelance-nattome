@@ -37,12 +37,22 @@ import Button from 'primevue/button';
   border: 1px solid #502414;
   padding-left: 1.8rem;
   padding-right: 1.8rem;
-}
-.p-button-rounded {
-  border-radius: 100px;
-}
-.p-button-text {
-  background-color: transparent;
-  border: 1px solid transparent;
+
+  &:not(.p-button-icon-only):hover {
+    background-color: mix(black, #502414, 20%);
+  }
+
+  &.p-button-icon-only {
+    padding: 0;
+  }
+
+  &.p-button-rounded {
+    border-radius: 100px;
+  }
+
+  &.p-button-text {
+    background-color: transparent;
+    border: 1px solid transparent;
+  }
 }
 </style>
