@@ -46,7 +46,13 @@
           placeholder="Enter your email address"
           class="bg-transparent border-[#3b3b3b]"
         />
-        <CustomButton label="Submit" class="ml-2 bg-[#3b3b3b] text-white" />
+        <CustomButton
+          :pt="{
+            root: { style: { backgroundColor: '#3b3b3b', border: '#3b3b3b' } },
+          }"
+          class="ml-2"
+          label="Submit"
+        />
       </section>
     </div>
     <div>
