@@ -30,7 +30,8 @@ const items = ref([
 </script>
 
 <template>
-  <Menubar :model="items" class="px-20 py-6">
+  <!-- <Menubar :model="items" class="px-20 py-6"> -->
+  <Menubar :model="items" class="">
     <template #start> <img :src="logoImg" /> </template>
     <template #end>
       <div class="menubar-end-wrapper">
@@ -54,17 +55,19 @@ const items = ref([
   display: flex;
   align-items: center;
   // justify-content: space-between;
-  position: fixed;
+  // position: fixed;
   width: 100%;
   // top: var(--banner-height);
-  top: 36px;
+  // top: 36px;
   backdrop-filter: blur(10px);
+  padding: 1rem;
   border: 1px solid transparent;
   z-index: 10;
 }
 
 :deep(.p-menubar-button) {
-  margin-left: 0.5rem;
+  // margin-left: 0.5rem;
+  margin-left: auto;
 }
 
 :deep(.p-menubar-root-list) {
@@ -75,6 +78,7 @@ const items = ref([
 
 :deep(.p-menubar-end) {
   margin-left: auto;
+  display: none;
   @media screen and (min-width: 1024px) {
     margin: 0;
   }
@@ -83,6 +87,6 @@ const items = ref([
 .menubar-end-wrapper {
   display: flex;
   align-items: center;
-  gap: 1.75rem;
+  // gap: 1.75rem;
 }
 </style>

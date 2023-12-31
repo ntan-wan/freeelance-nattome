@@ -61,9 +61,9 @@ function handleProduct(product) {
 <template>
   <div class="landing-page">
     <section class="section-base section-hero flex">
-      <div class="flex items-center w-1/2">
+      <div class="flex items-center md:w-1/2">
         <div
-          class="pl-20"
+          class="px-4 md:pl-20"
           v-animateonscroll="{ enterClass: 'onScroll-fadeInLeft' }"
         >
           <h1 class="hero-title">Plant-Based</h1>
@@ -79,7 +79,7 @@ function handleProduct(product) {
     </section>
 
     <section class="section-base section-second">
-      <CustomContainer>
+      <CustomContainer class="px-4">
         <div
           class="flex flex-col lg:flex-row gap-4 justify-between items-center"
         >
@@ -97,25 +97,25 @@ function handleProduct(product) {
         </div>
 
         <div class="mt-16 flex flex-wrap justify-between">
-          <div class="basis-1/2 md:basis-3/12">
+          <div class="grid-col-custom w-6/12 md:w-3/12 p-2">
             <CustomIconWrapper>
               <NaturalIngredientIcon />
             </CustomIconWrapper>
-            <h4 class="icon-title mt-4">Natural Ingredients</h4>
+            <h4 class="icon-title mt-4">Natural Ingredient</h4>
           </div>
-          <div class="basis-1/2 md:basis-3/12">
+          <div class="grid-col-custom w-6/12 md:w-3/12 p-2">
             <CustomIconWrapper>
               <CoffeeIcon />
             </CustomIconWrapper>
             <h4 class="icon-title mt-4">Tasty & Smooth</h4>
           </div>
-          <div class="basis-1/2 md:basis-3/12">
+          <div class="grid-col-custom w-6/12 md:w-3/12 p-2">
             <CustomIconWrapper>
               <WheatIcon />
             </CustomIconWrapper>
             <h4 class="icon-title mt-4">Variety of Flavour</h4>
           </div>
-          <div class="basis-1/2 md:basis-3/12">
+          <div class="grid-col-custom w-6/12 md:w-3/12 p-2">
             <CustomIconWrapper>
               <NonMedicineIcon />
             </CustomIconWrapper>
@@ -124,11 +124,11 @@ function handleProduct(product) {
         </div>
 
         <h2 class="our-solution-title mt-20 text-center">Our Solutions</h2>
-        <div class="mt-9 flex flex-wrap justify-between">
+        <div class="mt-9 grid-custom justify-between">
           <CustomCardSolution
             pIsActive
             pHeader="Optimize Gastric PH Value"
-            class="basis-1/2 lg:basis-3/12"
+            class="grid-col-custom w-full md:w-6/12 lg:w-3/12 p-2"
           >
             <template #content>
               Nattome contains Gastro-AD which lowers gastric level to
@@ -137,7 +137,7 @@ function handleProduct(product) {
           </CustomCardSolution>
           <CustomCardSolution
             pHeader="Reduce Gastric & Protease Production"
-            class="basis-1/2 lg:basis-3/12"
+            class="grid-col-custom w-full md:w-6/12 lg:w-3/12 p-2"
           >
             <template #content>
               Lactobacillus digests protein and release peptide to reduce the
@@ -146,7 +146,7 @@ function handleProduct(product) {
             </template>
           </CustomCardSolution>
           <CustomCardSolution
-            class="basis-1/2 lg:basis-3/12"
+            class="grid-col-custom w-full md:w-6/12 lg:w-3/12 p-2"
             pHeader="Strengthen Gastric Repair & Immune System"
           >
             <template #content>
@@ -155,7 +155,7 @@ function handleProduct(product) {
             </template>
           </CustomCardSolution>
           <CustomCardSolution
-            class="basis-1/2 lg:basis-3/12"
+            class="grid-col-custom w-full md:w-6/12 lg:w-3/12 p-2"
             pHeader="Effective and Best for Gastric Maintenance"
           >
             <template #content>
@@ -195,7 +195,7 @@ function handleProduct(product) {
       </CustomContainer>
     </section>
 
-    <section class="section-base section-four">
+    <section class="section-base section-four px-4">
       <CustomContainer>
         <div class="flex flex-wrap">
           <!-- <div class="col-span-full md:col-span-5"> -->
@@ -219,7 +219,7 @@ function handleProduct(product) {
       </CustomContainer>
     </section>
 
-    <section class="section-base section-package">
+    <section class="section-base section-package px-4">
       <CustomContainer>
         <div class="flex flex-wrap">
           <div class="basis-full lg:basis-4/12 hidden lg:block">
@@ -232,7 +232,7 @@ function handleProduct(product) {
       </CustomContainer>
     </section>
 
-    <div class="bg-yellow-custom pt-10 pb-9">
+    <div class="bg-yellow-custom pt-10 pb-9 px-4">
       <section class="section-base section-member-vip">
         <CustomContainer>
           <h3 class="title text-center">Testimonials</h3>
@@ -240,33 +240,33 @@ function handleProduct(product) {
 
           <h3 class="title text-center mt-28">Join the Nattome VIP Member</h3>
           <div
-            class="mt-20 flex flex-wrap lg:flex-nowrap lg:justify-between lg:gap-4"
+            class="mt-20 grid-custom lg:flex-nowrap lg:justify-between lg:gap-4"
           >
-            <CustomMemberItem class="basis-6/12">
+            <CustomMemberItem class="grid-col w-6/12 lg:w-auto p-2">
               <template #icon>
                 <PresentIcon />
               </template>
               <template #text> Birthday Discount / Gifts </template>
             </CustomMemberItem>
-            <CustomMemberItem class="basis-6/12">
+            <CustomMemberItem class="grid-col w-6/12 lg:w-auto p-2">
               <template #icon>
                 <AnnualBuyIcon />
               </template>
               <template #text> Annually Buy 6 Free 2 </template>
             </CustomMemberItem>
-            <CustomMemberItem class="basis-6/12">
+            <CustomMemberItem class="grid-col w-6/12 lg:w-auto p-2">
               <template #icon>
                 <MsgIcon />
               </template>
               <template #text> Dietitian 1-on-1 Follow Up </template>
             </CustomMemberItem>
-            <CustomMemberItem class="basis-6/12">
+            <CustomMemberItem class="grid-col w-6/12 lg:w-auto p-2">
               <template #icon>
                 <WhatsappIcon />
               </template>
               <template #text> WhatsApp Community </template>
             </CustomMemberItem>
-            <CustomMemberItem class="basis-6/12">
+            <CustomMemberItem class="grid-col w-6/12 lg:w-auto p-2">
               <template #icon>
                 <PresentOpenIcon />
               </template>

@@ -71,7 +71,7 @@ const dummyData = [
         <p class="mt-[1.5rem] name">
           <b>{{ product.name }}</b>
         </p>
-        <p class="mt-[0.75rem] price">RM {{ product.price }}</p>
+        <p class="mt-[0.75rem] price !text-sm">RM {{ product.price }}</p>
         <small class="info block">Original Price</small>
         <CustomButton
           size="large"

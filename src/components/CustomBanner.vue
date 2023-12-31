@@ -5,7 +5,7 @@ import IconLorry from '@/components/icons/LorryIcon.vue';
 <template>
   <div class="banner-base">
     <p class="banner-content">
-      <IconLorry />
+      <IconLorry class="hidden sm:block" />
       Free shipping for purchase above RM400 | West Malaysia
     </p>
   </div>
@@ -14,13 +14,14 @@ import IconLorry from '@/components/icons/LorryIcon.vue';
 <style scoped lang="scss">
 .banner-base {
   background-color: var(--color-primary);
-  min-height: 36px;
+  // min-height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
+  // position: fixed;
   width: 100%;
   z-index: 10;
+  padding: 1rem;
 
   .banner-content {
     color: var(--color-white);

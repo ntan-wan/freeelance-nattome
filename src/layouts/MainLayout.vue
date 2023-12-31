@@ -4,8 +4,10 @@ import CustomFooter from '@/components/CustomFooter.vue';
 
 <template>
   <div class="layout-base">
-    <CustomBanner></CustomBanner>
-    <CustomNavbar></CustomNavbar>
+    <div class="">
+      <CustomBanner></CustomBanner>
+      <CustomNavbar></CustomNavbar>
+    </div>
     <main class="layout-content-grow">
       <slot />
     </main>

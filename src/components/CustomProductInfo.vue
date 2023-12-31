@@ -5,7 +5,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="product">
+  <div class="product p-4">
     <div class="flex flex-wrap">
       <div class="basis-full lg:basis-5/12">
         <FadeAnim>
@@ -69,7 +69,7 @@ const props = defineProps({
 .product {
   background-color: #fefbe8;
   border-radius: 1.5rem;
-  padding: 2.25rem;
+  // padding: 2.25rem;
   .product-title {
     color: #1d2939;
     font-size: 1.5rem;

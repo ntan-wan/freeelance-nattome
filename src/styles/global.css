@@ -85,6 +85,13 @@
     justify-content: center;
   }
 
+  .grid-custom {
+    @apply flex flex-wrap;
+  }
+  .grid-col-custom {
+    @apply grow-0 shrink-0 basis-auto;
+  }
+
   /* animate on scrolls */
   .onScroll-fadeIn {
     transition: opacity 1s ease;
@@ -104,13 +111,12 @@
       100% {
         opacity: 1;
         transform: translate3d(0);
-
       }
     }
   }
   .onScroll-fadeInLeft {
     animation: fadeInLeft 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    
+
     @keyframes fadeInLeft {
       0% {
         opacity: 0;
