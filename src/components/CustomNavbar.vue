@@ -51,16 +51,17 @@ const items = ref([
 
 <style scoped lang="scss">
 .p-menubar {
-  background-color: transparent;
+  // background-color: transparent;
   display: flex;
   align-items: center;
   // justify-content: space-between;
-  // position: fixed;
+  position: fixed;
   width: 100%;
   // top: var(--banner-height);
-  // top: 36px;
-  backdrop-filter: blur(10px);
-  padding: 1rem;
+  top: 40px;
+  // backdrop-filter: blur(10px);
+  background-color: #fefbe8;
+  padding: 2rem 5.62rem;
   border: 1px solid transparent;
   z-index: 10;
 }
@@ -78,7 +79,7 @@ const items = ref([
 
 :deep(.p-menubar-end) {
   margin-left: auto;
-  display: none;
+  // display: none;
   @media screen and (min-width: 1024px) {
     margin: 0;
   }
@@ -87,6 +88,6 @@ const items = ref([
 .menubar-end-wrapper {
   display: flex;
   align-items: center;
-  // gap: 1.75rem;
+  gap: 1.75rem;
 }
 </style>

@@ -14,7 +14,7 @@ const cardClass = computed(() => {
 <template>
   <div class="card-base" :class="cardClass">
     <h5 v-if="props.pHeader" class="card-title">{{ props.pHeader }}</h5>
-    <p class="card-text mt-12">
+    <p class="card-text mt-auto">
       <slot name="content"></slot>
     </p>
   </div>
@@ -25,6 +25,10 @@ const cardClass = computed(() => {
   padding: 1.5rem;
   padding-bottom: 3rem;
   border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  min-height: 287px;
 
   .card-title {
     color: #1d2939;
@@ -42,7 +46,7 @@ const cardClass = computed(() => {
     line-height: 1.3;
   }
 
-  &.active {
+  &:hover {
     background: linear-gradient(
       180deg,
       #ffedac 0%,

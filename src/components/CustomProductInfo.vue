@@ -6,24 +6,20 @@ const props = defineProps({
 
 <template>
   <div class="product p-4">
-    <div class="flex flex-wrap">
+    <div class="flex gap-[4rem]">
       <div class="basis-full lg:basis-5/12">
-        <FadeAnim>
-          <img
-            :src="props.pProduct.img"
-            :key="pProduct.id"
-            class="w-full rounded-[10px]"
-            height="300"
-          />
-        </FadeAnim>
+        <img
+          :src="props.pProduct.img"
+          :key="pProduct.id"
+          class="w-full rounded-[10px]"
+          height="300"
+        />
       </div>
       <div class="basis-full lg:basis-7/12 flex flex-col">
         <h6 class="product-title">Ingredients</h6>
-        <FadeAnim>
-          <p class="product-description" :key="props.pProduct.id">
-            {{ pProduct.description }}
-          </p>
-        </FadeAnim>
+        <p class="product-description" :key="props.pProduct.id">
+          {{ pProduct.description }}
+        </p>
         <h6 class="mt-auto product-title">Nutritions</h6>
       </div>
     </div>
@@ -69,7 +65,7 @@ const props = defineProps({
 .product {
   background-color: #fefbe8;
   border-radius: 1.5rem;
-  // padding: 2.25rem;
+  padding: 2.25rem;
   .product-title {
     color: #1d2939;
     font-size: 1.5rem;

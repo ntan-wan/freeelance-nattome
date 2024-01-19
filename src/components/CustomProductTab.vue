@@ -33,6 +33,10 @@ function handleProduct() {
   width: 100%;
   border: 1px solid transparent;
 
+  &:focus {
+    box-shadow: none;
+  }
+
   &:hover {
     background-color: mix(black, #fafafc, 10%);
   }

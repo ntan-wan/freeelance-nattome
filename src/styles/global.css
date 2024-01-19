@@ -8,8 +8,8 @@
     --color-secondary: #fefbe8;
     --color-white: #f2f4f7;
 
-    --banner-height: 36px;
-    --navbar-height: 92.2px;
+    --banner-height: 40px;
+    --navbar-height: 105.6px;
 
     --yellow-custom: #fefbe8;
   }
@@ -41,7 +41,8 @@
 
   #app {
     height: 1px;
-    min-height: 100dvh;
+    /* min-height: 100dvh; */
+    min-height: 100vh;
   }
 
   ::-webkit-scrollbar {
@@ -73,7 +74,7 @@
   }
 
   .section-base {
-    min-height: 100dvh;
+    min-height: 100vh;
   }
 }
 

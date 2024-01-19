@@ -18,10 +18,10 @@ import IconLorry from '@/components/icons/LorryIcon.vue';
   display: flex;
   align-items: center;
   justify-content: center;
-  // position: fixed;
+  position: fixed;
   width: 100%;
   z-index: 10;
-  padding: 1rem;
+  padding: 0.5rem;
 
   .banner-content {
     color: var(--color-white);

@@ -23,6 +23,10 @@ import mestiLogo from '@/assets/imgs/MestiLogo.png';
 import mhlLogo from '@/assets/imgs/MHLogo.png';
 import nhLogo from '@/assets/imgs/NHLogo.png';
 import gastroADImg from '@/assets/imgs/gastroADImg.png';
+import healthAndWellnessLogo from '@/assets/imgs/healthAndWellnessLogo.png';
+import HealthBrandLogo from '@/assets/imgs/HealthBrandLogo.png';
+import naturalHealthLogo from '@/assets/imgs/naturalHealthLogo.png';
+import healthyNewsLogo from '@/assets/imgs/healthyNewsLogo.svg';
 
 import CustomCarouselTestimonials from '@/components/CustomCarouselTestimonials.vue';
 import CustomCarouselProducts from '@/components/CustomCarouselProducts.vue';
@@ -61,19 +65,24 @@ function handleProduct(product) {
 <template>
   <div class="landing-page">
     <section class="section-base section-hero flex">
-      <div class="flex items-center md:w-1/2">
+      <div class="flex pt-[9rem] items-center md:w-1/2">
         <div
           class="px-4 md:pl-20"
           v-animateonscroll="{ enterClass: 'onScroll-fadeInLeft' }"
         >
-          <h1 class="hero-title">Plant-Based</h1>
-          <p class="hero-description">Health Products for Gut Care</p>
+          <h1 class="hero-title">Award-Winning</h1>
+          <p class="hero-description">Natural Gut Care Products</p>
           <p class="hero-description-small mt-10">
             Nattome endeavors to bring the best for our customers in terms
             <br />
             of quality, safety and experience from our products.
           </p>
-          <CustomButton label="Buy Now" rounded class="mt-16 text-2xl" />
+          <div class="mt-[1.5rem] flex gap-[0.5rem]">
+            <img :src="HealthBrandLogo" />
+            <img :src="healthAndWellnessLogo" />
+            <img :src="naturalHealthLogo" />
+          </div>
+          <CustomButton label="Buy Now" rounded class="mt-[3.04rem] text-2xl" />
         </div>
       </div>
     </section>
@@ -89,14 +98,14 @@ function handleProduct(product) {
               >Why don't you try Nattome Stomach food?</small
             >
           </div>
-          <p class="description grow text-center lg:text-right">
+          <p class="description grow">
             Nattome endeavors to bring the best for our customers in terms of
             <br />
             quality, safety and experience from our products.
           </p>
         </div>
 
-        <div class="mt-16 flex flex-wrap justify-between">
+        <div class="mt-[4.5rem] flex flex-wrap justify-between">
           <div class="grid-col-custom w-6/12 md:w-3/12 p-2">
             <CustomIconWrapper>
               <NaturalIngredientIcon />
@@ -123,7 +132,9 @@ function handleProduct(product) {
           </div>
         </div>
 
-        <h2 class="our-solution-title mt-20 text-center">Our Solutions</h2>
+        <h2 class="our-solution-title mt-[5.5rem] text-center">
+          Our Solutions
+        </h2>
         <div class="mt-9 grid-custom justify-between">
           <CustomCardSolution
             pIsActive
@@ -168,7 +179,7 @@ function handleProduct(product) {
       </CustomContainer>
     </section>
 
-    <section class="section-base section-third">
+    <section class="section-third">
       <CustomContainer>
         <div class="flex flex-wrap">
           <div
@@ -195,9 +206,9 @@ function handleProduct(product) {
       </CustomContainer>
     </section>
 
-    <section class="section-base section-four px-4">
+    <section class="section-four px-4">
       <CustomContainer>
-        <div class="flex flex-wrap">
+        <div class="flex gap-[1rem]">
           <!-- <div class="col-span-full md:col-span-5"> -->
           <div class="basis-full lg:basis-5/12 order-2 lg:order-1">
             <h3 class="title mb-8">Our Products</h3>
@@ -210,16 +221,19 @@ function handleProduct(product) {
             ></CustomProductTab>
           </div>
           <div class="basis full lg:basis-7/12 order-1 lg:order-2">
-            <CustomProductInfo
-              v-animateonscroll="{ enterClass: 'onScroll-fadeInRight' }"
-              :pProduct="getProduct(dummyProducts, selectedProductId)"
-            />
+            <FadeAnim>
+              <CustomProductInfo
+                :key="selectedProductId"
+                v-animateonscroll="{ enterClass: 'onScroll-fadeInRight' }"
+                :pProduct="getProduct(dummyProducts, selectedProductId)"
+              />
+            </FadeAnim>
           </div>
         </div>
       </CustomContainer>
     </section>
 
-    <section class="section-base section-package px-4">
+    <section class="section-package px-4">
       <CustomContainer>
         <div class="flex flex-wrap">
           <div class="basis-full lg:basis-4/12 hidden lg:block">
@@ -232,13 +246,26 @@ function handleProduct(product) {
       </CustomContainer>
     </section>
 
-    <div class="bg-yellow-custom pt-10 pb-9 px-4">
-      <section class="section-base section-member-vip">
+    <div class="bg-yellow-custom pt-[2.8rem] pb-[3.31rem] px-4 mt-[3.31rem]">
+      <section class="section-member-vip">
         <CustomContainer>
           <h3 class="title text-center">Testimonials</h3>
           <CustomCarouselTestimonials class="mt-6"></CustomCarouselTestimonials>
+        </CustomContainer>
+      </section>
+    </div>
 
-          <h3 class="title text-center mt-28">Join the Nattome VIP Member</h3>
+    <section class="section-feature mt-[3.75rem]">
+      <h3 class="title text-center">As Featured In</h3>
+      <div class="text-center mt-[1.94rem]">
+        <img :src="healthyNewsLogo" />
+      </div>
+    </section>
+
+    <div class="bg-yellow-custom pt-10 pb-9 px-4 mt-[3.75rem]">
+      <section class="section-member-vip">
+        <CustomContainer>
+          <h3 class="title text-center">Join the Nattome VIP Member</h3>
           <div
             class="mt-20 grid-custom lg:flex-nowrap lg:justify-between lg:gap-4"
           >
@@ -246,25 +273,34 @@ function handleProduct(product) {
               <template #icon>
                 <PresentIcon />
               </template>
-              <template #text> Birthday Discount / Gifts </template>
+              <template #text> Birthday Discount <br />/ Gifts </template>
             </CustomMemberItem>
             <CustomMemberItem class="grid-col w-6/12 lg:w-auto p-2">
               <template #icon>
                 <AnnualBuyIcon />
               </template>
-              <template #text> Annually Buy 6 Free 2 </template>
+              <template #text>
+                Annually Buy<br />
+                6 Free 2
+              </template>
             </CustomMemberItem>
             <CustomMemberItem class="grid-col w-6/12 lg:w-auto p-2">
               <template #icon>
                 <MsgIcon />
               </template>
-              <template #text> Dietitian 1-on-1 Follow Up </template>
+              <template #text>
+                Dietitian 1-on-1<br />
+                Follow Up
+              </template>
             </CustomMemberItem>
             <CustomMemberItem class="grid-col w-6/12 lg:w-auto p-2">
               <template #icon>
                 <WhatsappIcon />
               </template>
-              <template #text> WhatsApp Community </template>
+              <template #text>
+                WhatsApp<br />
+                Community
+              </template>
             </CustomMemberItem>
             <CustomMemberItem class="grid-col w-6/12 lg:w-auto p-2">
               <template #icon>
@@ -279,55 +315,66 @@ function handleProduct(product) {
           </div>
         </CustomContainer>
       </section>
-
-      <section class="mt-14 section-ingredients">
-        <CustomContainer>
-          <div class="flex flex-wrap">
-            <div
-              class="basis-full md:basis-4/12"
-              v-animateonscroll="{ enterClass: 'onScroll-fadeInLeft' }"
-            >
-              <h3 class="title">Our Main Ingredient</h3>
-              <strong
-                class="block mt-24 ingredient-name !text-5xl md:!text-[5rem]"
-                >Gastro-AD</strong
-              >
-              <sub class="ingredient-subtitle block">(Fermented Soy)</sub>
-              <p class="mt-9 infredient-description">
-                Top Patented Ingredients in Nattome’s Product
-              </p>
-            </div>
-            <div
-              class="basis-full md:basis-8/12"
-              v-animateonscroll="{ enterClass: 'onScroll-fadeInRight' }"
-            >
-              <img :src="gastroADImg" class="w-full max-w-full" />
-            </div>
-          </div>
-        </CustomContainer>
-      </section>
     </div>
+
+    <section class="mt-14 section-ingredients">
+      <CustomContainer>
+        <div class="flex gap-x-[5rem]">
+          <div
+            class="basis-full md:basis-4/12"
+            v-animateonscroll="{ enterClass: 'onScroll-fadeInLeft' }"
+          >
+            <h3 class="title">Our Main Ingredient</h3>
+            <strong
+              class="block mt-24 ingredient-name !text-5xl md:!text-[5rem]"
+              >Gastro-AD</strong
+            >
+            <sub class="ingredient-subtitle block">(Fermented Soy)</sub>
+            <p class="mt-9 ingredient-description">
+              Top Patented Ingredients in Nattome’s Product
+            </p>
+          </div>
+          <div
+            class="basis-full md:basis-8/12"
+            v-animateonscroll="{ enterClass: 'onScroll-fadeInRight' }"
+          >
+            <img :src="gastroADImg" class="w-full max-w-full" />
+          </div>
+        </div>
+      </CustomContainer>
+    </section>
 
     <section class="mt-10 pb-24 section-certification">
       <CustomContainer>
-        <h3 class="title text-center">Our Certifications & Awards</h3>
-        <div class="grid grid-cols-7 mt-12">
+        <h3 class="title text-center">Awards</h3>
+        <div class="flex gap-x-[5rem] justify-center items-center mt-[3rem]">
           <div class="col-start-1 grid-item-center">
             <img :src="apcLogo" />
-            <p class="cert-name">Asia Pacific Super Health Brand</p>
+            <p class="cert-name">Asia Pacific Super <br />Health Brand</p>
           </div>
           <div class="col-start-3 grid-item-center">
             <img :src="mhlLogo" />
-            <p class="cert-name">Malaysia Health & Wellness Brand Awards</p>
+            <p class="cert-name">
+              Malaysia Health & <br />Wellness Brand Awards
+            </p>
           </div>
           <div class="col-start-5 grid-item-center">
             <img :src="nhLogo" />
             <p class="cert-name">Natural Health Awards</p>
           </div>
+        </div>
+
+        <h3 class="text-center title mt-[4.81rem]">Certifications</h3>
+        <div class="flex justify-between mt-[3rem]">
+          <div class="col-start-5 grid-item-center">
+            <img :src="bioeconomyLogo" />
+            <p class="cert-name">Bioeconomy Malaysia</p>
+          </div>
           <div class="col-start-7 grid-item-center">
             <img :src="gmpLogo" />
             <p class="cert-name">GMP</p>
           </div>
+
           <div class="col-start-2 grid-item-center">
             <img :src="halalLogo" />
             <p class="cert-name">HALAL</p>
@@ -338,15 +385,14 @@ function handleProduct(product) {
           </div>
           <div class="col-start-6 grid-item-center">
             <img :src="kkmLogo" />
-            <p class="cert-name">Kementerian Kesihatan Malaysia (KKM)</p>
+            <p class="cert-name">
+              Kementerian Kesihatan <br />
+              Malaysia (KKM)
+            </p>
           </div>
           <div class="col-start-3 grid-item-center">
             <img :src="mestiLogo" />
             <p class="cert-name">MeSTI</p>
-          </div>
-          <div class="col-start-5 grid-item-center">
-            <img :src="bioeconomyLogo" />
-            <p class="cert-name">Bioeconomy Malaysia</p>
           </div>
         </div>
       </CustomContainer>
@@ -356,10 +402,10 @@ function handleProduct(product) {
 
 <style scoped lang="scss">
 .section-hero {
-  //   margin-top: var(--banner-height);
+  margin-top: calc(var(--banner-height) + var(--navbar-height));
   background-image: url('@/assets/imgs/heroImg.png');
   background-size: cover;
-  background-position: center;
+  background-position: 100% 0%;
   background-repeat: no-repeat;
 
   .hero-title {
@@ -386,7 +432,8 @@ function handleProduct(product) {
 }
 
 .section-second {
-  padding-top: calc(var(--banner-height) + var(--navbar-height));
+  // padding-top: calc(var(--banner-height) + var(--navbar-height));
+  margin-top: 5rem;
   .title {
     color: #1d2939;
     // text-align: center;
@@ -430,7 +477,8 @@ function handleProduct(product) {
 }
 
 .section-third {
-  padding-top: calc(var(--banner-height) + var(--navbar-height));
+  // padding-top: calc(var(--banner-height) + var(--navbar-height));
+  margin-top: 4.75rem;
 
   .title {
     color: #1d2939;
@@ -451,7 +499,7 @@ function handleProduct(product) {
 
 .section-four {
   //   padding-top: calc(var(--banner-height) + var(--navbar-height));
-
+  margin-top: 5.5rem;
   .title {
     color: #1d2939;
     font-size: 2.25rem;
@@ -461,7 +509,21 @@ function handleProduct(product) {
   }
 }
 
+.section-package {
+  margin-top: 4.88rem;
+}
+
 .section-member-vip {
+  .title {
+    color: #1d2939;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+}
+
+.section-feature {
   .title {
     color: #1d2939;
     font-size: 2.25rem;
@@ -490,6 +552,14 @@ function handleProduct(product) {
   }
 
   .ingredient-subtitle {
+    color: #667085;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+
+  .ingredient-description {
     color: #667085;
     font-size: 1.5rem;
     font-style: normal;
